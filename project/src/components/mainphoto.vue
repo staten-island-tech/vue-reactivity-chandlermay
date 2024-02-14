@@ -1,13 +1,10 @@
 <template>
-  <div>
-
-  </div>
+    <div>
+<img :src = "Cars.img" alt=""/>
+    </div>
 </template>
 
-<script>
-  export default {
-    
-  }
+<script setup>
 </script>
 
 <style lang="scss" scoped>

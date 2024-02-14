@@ -1,23 +1,21 @@
 <template>
   <div>
-    <h2>{{ Destination.name }}</h2>
-    <img :src="Destination.img" alt="" />
-    <h3>{{ clicked }}</h3>
-    <button @click="increment">Click Me</button>
+    <li v-for ></li>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-const props = defineProps({
-  Destination: Object,
-});
 
 //clicker logic
 const clicked = ref(0);
 function increment() {
   clicked.value++;
 }
+
+const colors = ref([
+  {id: id++, name: White}
+])
 </script>
 
 <style scoped>
