@@ -1,12 +1,6 @@
 <template>
   <div>
-    <mainphoto 
-    :key="cars.id" 
-    
-    />
-    <DestCard 
-    
-    />
+    <DestCard/>
   </div>
 </template>
 

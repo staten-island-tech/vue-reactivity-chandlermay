@@ -1,17 +1,14 @@
 <template>
   <div>
-    <li v-for ></li>
+    <li v-for="color in colors" :key="colors.id" >
+      <input type ="checkbox">
+    <span :class="colortitles">{{ color.name }}</span>
+    </li>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-
-//clicker logic
-const clicked = ref(0);
-function increment() {
-  clicked.value++;
-}
 
 const colors = ref([
   {id: id++, name: White}
