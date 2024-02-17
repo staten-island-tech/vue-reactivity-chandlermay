@@ -7,12 +7,11 @@
 <script setup>
 import {ref} from "vue"
 
-const id = 0
 const cars = ref([
-    {id: id++, img: "https://shorturl.at/betT7"},
-    {id: id++, img: "https://shorturl.at/agzNQ"},
-    {id: id++, img: "https://shorturl.at/xAEKV"},
-    {id: id++, img: "https://shorturl.at/uIMWX"},
+    {id: white, img: "https://shorturl.at/betT7"},
+    {id: black, img: "https://shorturl.at/agzNQ"},
+    {id: red, img: "https://shorturl.at/xAEKV"},
+    {id: yellow, img: "https://shorturl.at/uIMWX"},
 ])
 
 </script>

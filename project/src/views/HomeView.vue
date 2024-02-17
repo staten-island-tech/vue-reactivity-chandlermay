@@ -1,13 +1,15 @@
 <template>
   <div>
-    <DestCard/>
+    <DestCard></DestCard>
   </div>
 </template>
 
 <script setup>
 
 import DestCard from "@/components/DestCard.vue";
+import Mainphoto from "@/components/mainphoto.vue";
 import { ref } from "vue";
+
 
 </script>
 

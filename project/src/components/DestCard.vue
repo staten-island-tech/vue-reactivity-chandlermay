@@ -1,13 +1,20 @@
 <template>
   <div>
     <ul  :id="list" v-for="color in colors" :key="colors.id" >
-    <button :class="button">{{ color.name }}</button>
+    <button @click="display" :class="button" id="colors.id">{{ color.name }}</button>
     </ul>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+
+const chosen = ref(false);
+
+function display(){
+  chosen.value = !chosen.value;
+  console.log(chosen.value);
+}
 
 let id = 0;
 const colors = ref([
