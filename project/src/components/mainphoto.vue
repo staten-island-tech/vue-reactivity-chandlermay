@@ -1,7 +1,7 @@
 <template>
     <div :class="cardClass">
         <h1 :class="titleClass">{{ car.id }}</h1>
-        <h2>{{ car.caption }}</h2>
+        <h3>{{ car.caption }}</h3>
         <img :src="car.img" alt="" />
         <h3 :class="priceClass">{{ car.price }}</h3>
     </div>
@@ -30,8 +30,9 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem;
-    border-radius: 4rem;
+    min-width: 22.5%;
+    padding-bottom: 1rem;
+    border-radius: 1.6rem;
     background: #ffffff;
     margin-top: 2rem;
 }

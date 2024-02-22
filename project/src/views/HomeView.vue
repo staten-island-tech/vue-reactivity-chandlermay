@@ -28,6 +28,6 @@ const cars = ref([
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:space-between;
+    justify-content:space-evenly;
 }
 </style>
