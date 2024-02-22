@@ -31,6 +31,11 @@ img {
     flex-direction: column;
     align-items: center;
     padding:2rem;
+    border-radius: 80px;
+background: linear-gradient(145deg, #f0f0f0, #cacaca);
+box-shadow:  41px 41px 82px #c1c1c1,
+             -41px -41px 82px #ffffff;
+    margin-right:5rem;
 }
 
 .price{
