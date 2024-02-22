@@ -3,7 +3,7 @@
         <h1 :class="titleClass">{{ car.id }}</h1>
         <h2>{{ car.caption }}</h2>
         <img :src="car.img" alt="" />
-        <h3 :class= "priceClass">{{ car.price }}</h3>
+        <h3 :class="priceClass">{{ car.price }}</h3>
     </div>
 </template>
 
@@ -27,19 +27,24 @@ img {
 }
 
 .card {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding:2rem;
-    border-radius: 80px;
-background: linear-gradient(145deg, #f0f0f0, #cacaca);
-box-shadow:  41px 41px 82px #c1c1c1,
-             -41px -41px 82px #ffffff;
-    margin-right:5rem;
+    padding: 1.5rem;
+    border-radius: 4rem;
+    background: #ffffff;
+    margin-top: 2rem;
 }
 
-.price{
-
+h1,
+h2 {
+    color: #000000
 }
+
+h3 {
+    color: #000000
+}
+
+.price {}
 </style>
 
