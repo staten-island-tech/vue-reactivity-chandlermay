@@ -1,6 +1,6 @@
 <template>
-  <header>
-<h1>Porsche</h1>
+  <header :class = "headerClass">
+<h1 :id="porschetitleClass">Porsche</h1>
   </header>
     <div :class="containerClass">
     <Mainphoto v-for="car in cars" :key=cars.id :car="car" />
@@ -13,6 +13,8 @@ import DestCard from "@/components/DestCard.vue";
 import Mainphoto from "@/components/mainphoto.vue";
 import { ref } from "vue";
 const containerClass = "container"
+const headerClass = "header"
+const porschetitleClass = "porschetitle"
 const cars = ref([
   { id: "718", img: "https://shorturl.at/wFR14", caption:"The mid-engine sports car for two", price:"From $69,950" },
   { id: "911", img: "https://shorturl.at/hyBC6", caption:"The quintessential, rear engine sports car", price: "From $116,050"},
@@ -29,5 +31,11 @@ const cars = ref([
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:space-evenly;
+}
+.header{
+  text-align: center;
+}
+.porschetitle{
+  
 }
 </style>
