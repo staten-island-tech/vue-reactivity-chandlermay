@@ -1,10 +1,10 @@
 <template>
-    <div :class="cardClass">
+    <button @click="changeScreen" :class="cardClass">
         <h1 :class="titleClass">{{ car.id }}</h1>
         <h3>{{ car.caption }}</h3>
         <img :src="car.img" alt="" />
         <h3 :class="priceClass">{{ car.price }}</h3>
-    </div>
+</button>
 </template>
 
 <script setup>
@@ -15,6 +15,7 @@ const props = defineProps({
 const titleClass = "title"
 const cardClass = "card"
 const priceClass = "price"
+
 </script>
 
 <style scoped>
@@ -35,6 +36,7 @@ img {
     border-radius: 1.6rem;
     background: #ffffff;
     margin-top: 2rem;
+    padding-top: 0.5rem;
 }
 
 h1,
@@ -46,6 +48,5 @@ h3 {
     color: #000000
 }
 
-.price {}
 </style>
 
