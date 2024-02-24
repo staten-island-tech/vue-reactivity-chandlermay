@@ -1,10 +1,13 @@
 <template>
   <nav :class="navClass">
-    <button @click="homeAction" :class="homebuttonClass">Home</button>
+    <button @click="homeAction" :class="homebuttonClass">Toggle</button>
     <h1 :id="porschetitleClass">Porsche</h1>
   </nav>
   <div v-if="displaymain" :class="containerClass">
     <Mainphoto  v-for="car in cars" :key=cars.id :car="car" />
+  </div>
+  <div v-else>
+    <DestCard/>
   </div>
 </template>
 
@@ -21,7 +24,7 @@ const homebuttonClass = "homebutton"
 
 const displaymain = ref(true);
 function homeAction(){
-displaymain.value = ref(true);
+displaymain.value = !displaymain.value;
 }
 
 const cars = ref([
@@ -60,6 +63,10 @@ const cars = ref([
 }
 
 .homebutton {
+  width: 6rem;
+  height: 2rem;
+}
+.makeMoney {
   width: 6rem;
   height: 2rem;
 }

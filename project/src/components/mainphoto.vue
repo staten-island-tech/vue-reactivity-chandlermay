@@ -4,6 +4,7 @@
         <h3>{{ car.caption }}</h3>
         <img :src="car.img" alt="" />
         <h3 :class="priceClass">{{ car.price }}</h3>
+        <h4>Owned: {{  }}</h4>
 </button>
 </template>
 
