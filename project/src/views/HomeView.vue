@@ -10,6 +10,7 @@
         <img :src="car.img" alt="" />
         <h3 :class="priceClass">{{ car.price }}</h3>
         <button @click="purchaseCar(car)">Add to Cart</button>
+        <h3> Owned: {{ car.owned }}</h3>
       </div>
     </ul>
   </div>
@@ -42,6 +43,7 @@ const total = computed(() => {
 
 function purchaseCar(car) {
   cart.value.push(car.actualprice);
+  car.owned++;
 }
 
 </script>
