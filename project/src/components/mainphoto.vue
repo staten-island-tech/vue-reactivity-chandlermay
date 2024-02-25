@@ -20,9 +20,9 @@ const cardClass = "card"
 const priceClass = "price"
 
 function AddOwn(){
-    if (props.balance >= props.car.actualprice){
-        props.car.owned++;
-        console.log(props.balance - props.car.actualprice);
+    if (balance >= car.actualprice){
+        car.owned++;
+        balance = balance - car.actualprice;
     } else {
        prompt("YOU'RE TOO POOR. SELECT OK AND WORK HARDER."); 
     }
