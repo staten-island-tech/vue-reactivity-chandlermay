@@ -25,7 +25,6 @@ const porschetitleClass = "porschetitle"
 const titleClass = "title"
 const cardClass = "card"
 const priceClass = "price"
-const sellButtonClass = "sellbutton"
 
 const cars = ref([
   { id: "718", img: "https://shorturl.at/wFR14", caption: "The mid-engine sports car for two", price: "From $69,950", owned: ref(0), actualprice: 69950 },
