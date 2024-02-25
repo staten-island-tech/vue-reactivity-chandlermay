@@ -1,10 +1,10 @@
 <template>
-    <button @click="changeScreen" :class="cardClass">
+    <button @click="AddOwn" :class="cardClass">
         <h1 :class="titleClass">{{ car.id }}</h1>
         <h3>{{ car.caption }}</h3>
         <img :src="car.img" alt="" />
         <h3 :class="priceClass">{{ car.price }}</h3>
-        <h4>Owned: {{  }}</h4>
+        <h4>Owned: {{ car.owned }}</h4>
 </button>
 </template>
 
@@ -12,11 +12,21 @@
 import { ref } from "vue"
 const props = defineProps({
     car: Object,
+    balance: Number,
+    actualprice: Number,
 });
 const titleClass = "title"
 const cardClass = "card"
 const priceClass = "price"
 
+function AddOwn(){
+    if (props.balance >= props.car.actualprice){
+        props.car.owned++;
+        console.log(props.balance - props.car.actualprice);
+    } else {
+       prompt("YOU'RE TOO POOR. SELECT OK AND WORK HARDER."); 
+    }
+}
 </script>
 
 <style scoped>
