@@ -10,7 +10,6 @@
         <img :src="car.img" alt="" />
         <h3 :class="priceClass">{{ car.price }}</h3>
         <button @click="purchaseCar(car)">Add to Cart</button>
-        <button @click="sellCar(car)" :class="sellButtonClass">Remove from Cart</button>
       </div>
     </ul>
   </div>
@@ -44,13 +43,6 @@ const total = computed(() => {
 
 function purchaseCar(car) {
   cart.value.push(car.actualprice);
-}
-
-function sellCar(car) {
-  const index = cart.value.findIndex(price => price === car.actualprice);
-  if (index !== -1) {
-    cart.value.splice(index, 1);
-  }
 }
 
 </script>
