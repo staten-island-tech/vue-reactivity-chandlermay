@@ -2,23 +2,23 @@
   <nav :class="navClass">
     <h1 :id="porschetitleClass">Porsche</h1>
   </nav>
-  <div :class="containerClass">
-    <ul v-for="car in cars" :key="cars.id">
-      <div :class="cardClass">
-        <h1 :class="titleClass">{{ car.id }}</h1>
-        <h3>{{ car.caption }}</h3>
-        <img :src="car.img" alt="" />
-        <h3 :class="priceClass">{{ car.price }}</h3>
-        <button @click="purchaseCar(car)">Add to Cart</button>
-        <h3> Owned: {{ car.owned }}</h3>
-      </div>
-    </ul>
+  <div :class="containerClass" >
+    <div v-for="car in cars" :key="cars.id" :class="cardClass">
+      <h1 :class="titleClass">{{ car.id }}</h1>
+      <h3>{{ car.caption }}</h3>
+      <img :src="car.img" alt="" />
+      <h3 :class="priceClass">{{ car.price }}</h3>
+      <button @click="purchaseCar(car)">Add to Cart</button>
+      <h3> Owned: {{ car.owned }}</h3>
+    </div>
   </div>
-  <p>Total Cost: ${{ total }}</p>
+  <div :class="cartcontainerClass">
+    <h3>Total Cost: ${{ total }}</h3>
+  </div>
 </template>
 
 <script setup>
-import { ref,computed} from "vue";
+import { ref, computed } from "vue";
 
 const containerClass = "container"
 const navClass = "nav"
@@ -26,6 +26,7 @@ const porschetitleClass = "porschetitle"
 const titleClass = "title"
 const cardClass = "card"
 const priceClass = "price"
+const cartcontainerClass = "cartcontainer"
 
 const cars = ref([
   { id: "718", img: "https://shorturl.at/wFR14", caption: "The mid-engine sports car for two", price: "From $69,950", owned: ref(0), actualprice: 69950 },
@@ -103,5 +104,12 @@ h2 {
 
 h3 {
   color: #000000
+}
+
+.cartcontainer {
+  padding-left: 15rem;
+  padding-right: 15rem;
+  margin-top: 5rem;
+  width: 50%;
 }
 </style>
