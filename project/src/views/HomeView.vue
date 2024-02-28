@@ -1,19 +1,29 @@
 <template>
+  <video autoplay muted loop :id="backgroundvideoClass">
+  <source src="https://cdn.coverr.co/videos/coverr-rear-view-of-a-porsche-gt3-3421/1080p.mp4" type="video/mp4">
+</video>
+
   <nav :class="navClass">
     <h1 :id="porschetitleClass">Porsche</h1>
   </nav>
+  <div :class="bigcontainerClass">
   <div :class="containerClass" >
     <div v-for="car in cars" :key="cars.id" :class="cardClass">
       <h1 :class="titleClass">{{ car.id }}</h1>
-      <h3>{{ car.caption }}</h3>
+      <h4>{{ car.caption }}</h4>
       <img :src="car.img" alt="" />
       <h3 :class="priceClass">{{ car.price }}</h3>
       <button @click="purchaseCar(car)">Add to Cart</button>
-      <h3> Owned: {{ car.owned }}</h3>
     </div>
   </div>
-  <div :class="cartcontainerClass">
-    <h3>Total Cost: ${{ total }}</h3>
+  <!-- <div :class="cartcontainerClass"></div> -->
+  <div :class="cartClass">
+    <h2>Total Cost: ${{ total }}</h2>
+    <h4>Number Of Cars Selected:</h4>
+    <ul v-for="car in cars">
+      <h3> {{ car.id }}: {{ car.owned }}</h3>
+    </ul>
+  </div>
   </div>
 </template>
 
@@ -26,7 +36,9 @@ const porschetitleClass = "porschetitle"
 const titleClass = "title"
 const cardClass = "card"
 const priceClass = "price"
-const cartcontainerClass = "cartcontainer"
+const cartClass = "cart"
+const bigcontainerClass = "bigcontainer"
+const backgroundvideoClass = "backgroundvideo"
 
 const cars = ref([
   { id: "718", img: "https://shorturl.at/wFR14", caption: "The mid-engine sports car for two", price: "From $69,950", owned: ref(0), actualprice: 69950 },
@@ -55,6 +67,7 @@ function purchaseCar(car) {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  width: 70%;
 }
 
 .nav {
@@ -64,7 +77,7 @@ function purchaseCar(car) {
   flex-direction: row;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 1.5rem;
+  /* padding-top: 1.5rem; */
   align-items: center;
   font-family: "Porsche Next','Arial Narrow',Arial,'Heiti SC',SimHei,sans-serif";
   font-size: 2rem;
@@ -75,6 +88,7 @@ function purchaseCar(car) {
   padding-top: 1.5%;
   text-align: center;
   text-justify: center;
+  color:#ffffff;
 }
 
 img {
@@ -97,19 +111,35 @@ img {
   padding-top: 0.5rem;
 }
 
-h1,
-h2 {
+h1,h2,h3,h4 {
   color: #000000
 }
 
-h3 {
-  color: #000000
+.cart {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  width: 15%;
+  height: 16rem;
+  /* margin-left: 7%; */
+}
+.bigcontainer {
+  display:flex;
+  flex-direction: row;
+  align-items:baseline;
+  justify-content: space-around;
 }
 
-.cartcontainer {
-  padding-left: 15rem;
-  padding-right: 15rem;
-  margin-top: 5rem;
-  width: 50%;
+#backgroundvideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
+
 </style>
